@@ -1,0 +1,35 @@
+# GrumPHP Configuration for Blade Validation
+#
+# Copy this file to your project root as grumphp.yml and customize as needed.
+# Then run: vendor/bin/grumphp git:init
+#
+# This will set up a pre-commit hook that validates Blade files before each commit.
+
+grumphp:
+    extensions:
+        - Deinte\BladeValidator\GrumPHP\ExtensionLoader
+
+    tasks:
+        blade_validation:
+            # File extensions to trigger validation (default: blade.php)
+            triggered_by: ['blade.php']
+
+            # Minimum severity to report: error, warning, or info (default: error)
+            severity: error
+
+            # Additional paths to validate (beyond changed files)
+            # paths: []
+
+            # Patterns to ignore (fnmatch format)
+            # ignore:
+            #     - '**/vendor/**'
+            #     - '**/cache/**'
+
+            # Specific rules to run (empty = all enabled rules)
+            # rules: []
+
+            # Rules to exclude
+            # exclude_rules: []
+
+            # Don't fail the commit even if errors found (default: false)
+            # no_fail: false
